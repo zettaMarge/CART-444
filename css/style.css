@@ -1,0 +1,359 @@
+:root {
+  /* --- Colours --- */
+  --teal-var-1: rgb(113,202,176);
+  --teal-var-2: rgb(64,199,159);
+  --teal-var-main: rgb(11,165,121);
+  --teal-var-4: rgb(5,115,84);
+  --teal-var-5: rgb(3,88,64);
+
+
+  --purple-var-1: rgb(225,172,254);
+
+  --purple-var-main: rgb(179,106,219);
+  --purple-var-main-50: rgba(179,106,219,0.5);
+  --purple-var-main-75: rgba(179,106,219,0.75);
+
+  --purple-var-3: rgb(151,45,209);
+  --purple-var-4: rgb(110,14,163);
+  --purple-var-5: rgb(80,15,115);
+
+
+  --blue-var-1: rgb(70,118,204);
+
+  --blue-var-2: rgb(40,88,174);
+  --blue-var-2-35: rgba(40, 88, 174, 0.35);
+  --blue-var-2-65: rgba(40, 88, 174, 0.65);
+
+  --blue-var-3: rgb(30,59,112);
+  --blue-var-main: rgb(27,48,87);
+  --blue-var-5: rgb(12,38,86);
+
+  --violet-var-1: rgb(132,127,234);
+  --violet-var-2: rgb(90,86,182);
+  --violet-var-3: rgb(63,59,139);
+  --violet-var-4: rgb(50,47,114);
+  --violet-var-main: rgb(33,31,72);
+
+  --black: rgb(33,27,36);
+  --black-40: rgba(33,27,36,0.4);
+  --black-50: rgba(33,27,36,0.5);
+  --black-85: rgba(33,27,36,0.85);
+
+  --white: rgb(250,240,243);
+  --white-25: rgba(250,240,243,0.25);
+  --white-50: rgba(250,240,243,0.5);
+
+  /* --- Fonts --- */
+  @font-face {
+    font-family: "Carnivalee Freakshow";
+    src: url('../fonts/carnivalee-freakshow/Carnevalee-Freakshow.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  font-size: 16px;
+  font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+  color: var(--purple-var-main);
+
+  .display-heading {
+    font-family: "Carnivalee Freakshow";
+    font-size: 46px;
+    color: var(--teal-var-main);
+    letter-spacing: 5px;
+  }
+
+  .h2-heading {
+    font-family: "Carnivalee Freakshow";
+    font-size: 31px;
+    color: var(--teal-var-main);
+    letter-spacing: 5px;
+    display: inline;
+  }
+
+  .white-txt {
+    color: var(--white);
+  }
+
+  /* --- Grid --- */
+  --gutter-size: 32px;
+  --double-gutter-size: 64px;
+  --triple-gutter-size: 96px;
+  --half-gutter-size: 16px;
+  --screen-margin-size: 128px;
+  --screen-margin-plus-size: 288px;
+  --nb-columns: 12;
+
+  .tab {
+    margin-left: var(--gutter-size);
+    margin-right: var(--gutter-size);
+  }
+
+
+  /* --- Aspect Ratio --- */
+  .portrait {
+    aspect-ratio: 9 / 16;
+  }
+
+  .landscape {
+    aspect-ratio: 16 / 9;
+  }
+
+  .square {
+    aspect-ratio: 1/1;
+  }
+
+  .header {
+    width: 100vw;
+  }
+
+  /* --- --- --- --- */
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  #canvas-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: center;
+    min-height: 250vh;
+    width: 100vw;
+  }
+
+  canvas {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+
+  #nav {
+    height: 25vh;
+    display: grid;
+    grid-template-columns: 2fr 4fr 4fr 2fr;
+    margin-right: 160px;
+    margin-left: 160px;
+  }
+
+  .nav-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .nav-item-holder {
+    height: var(--triple-gutter-size);
+    width: var(--gutter-size);
+    box-shadow: 0 0 16px 4px var(--white-25);
+    z-index: -1;
+    background: var(--black);
+    margin: auto;
+    padding-top: 10px;
+  }
+
+  button.nav-item {
+    height: var(--triple-gutter-size);
+    font-family: "Carnivalee Freakshow";
+    font-size: 32px;
+    color: var(--teal-var-1);
+    letter-spacing: 5px;
+    text-align: center;
+    padding: var(--half-gutter-size);
+    border-color: var(--black);
+    border-radius: 5px;
+    border-width: 3px;
+    border-style: groove;
+    background: var(--blue-var-main);
+    box-shadow: inset 0 0 8px 8px var(--blue-var-2-35), 0 0 8px 0 var(--white-25);
+    padding-left: var(--gutter-size);
+    padding-right: var(--gutter-size);
+  }
+
+  button.nav-item-selected {
+    box-shadow: inset 0 0 8px 8px var(--blue-var-2-65), 0 1px 15px 4px var(--white);
+    color: var(--white);
+  }
+
+  button.nav-item:hover {
+    box-shadow: inset 0 0 8px 8px var(--blue-var-2-65), 0 1px 15px 4px var(--white);
+  }
+
+  button.nav-item:active {
+    box-shadow: inset 0 0 8px 8px var(--blue-var-2-65), 0 1px 15px 4px var(--white);
+    color: var(--white);
+  }
+
+  #content-zone {
+    margin-top: 64px;
+  }
+
+  #footer {
+    margin-top: auto;
+    margin-bottom: var(--gutter-size);
+    margin-left: var(--screen-margin-size);
+    margin-right: var(--screen-margin-size);
+    color: var(--teal-var-main);
+    padding-bottom: var(--half-gutter-size);
+    font-size: 14px;
+  }
+
+  #footer h1 {
+    font-size: 28px;
+  }
+
+  #footer div a {
+    color: var(--teal-var-4);
+    text-decoration: underline;
+  }
+
+  #footer div a:hover {
+    color: var(--teal-var-1);
+    text-decoration: underline;
+  }
+
+  .txt-box {
+    background-color: var(--purple-var-main-75);
+    border-radius: 20px;
+    padding: var(--gutter-size);
+    box-shadow: 12px 16px 16px 0 var(--black-85), inset 4px 4px 32px 0 var(--white-50);
+    color: var(--white);
+  }
+
+  .txt-zone {
+    border-style: dotted;
+    border-color: var(--white);
+    border-radius: 13px;
+    border-width: 5px;
+    padding: var(--half-gutter-size);
+    padding-left: var(--gutter-size);
+    padding-right: var(--gutter-size);
+    font-size: 22px;
+  }
+
+  /* --- Bio --- */
+  #bio {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    column-gap: var(--gutter-size);
+    padding-right: 160px;
+    padding-left: 160px;
+    padding-bottom: var(--double-gutter-size);
+    margin-bottom: var(--double-gutter-size);
+  }
+
+  /* --- Demo --- */
+  #demo {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    column-gap: var(--gutter-size);
+    padding-right: 160px;
+    padding-left: 160px;
+    padding-bottom: var(--double-gutter-size);
+    margin-bottom: var(--double-gutter-size);
+  }
+
+  #game {
+    margin:auto;
+	  display:none;
+    align-self: center;
+    width: 90vh;
+    max-height: 90vh;
+    z-index: 10;
+    border-radius: 20px;
+  }
+
+  button.start {
+    font-size: 24px;
+    font-family: "Carnivalee Freakshow";
+    letter-spacing: 5px;
+    text-align: center;
+    padding: var(--half-gutter-size);
+    margin-bottom: var(--half-gutter-size);
+    margin-top: var(--half-gutter-size);
+    background: var(--blue-var-main);
+    border-color: var(--black);
+    border-radius: 5px;
+    border-width: 3px;
+    border-style: groove;
+    box-shadow: inset 0 0 8px 8px var(--blue-var-2-35), 2px 4px 8px 0 var(--black-85);
+    color: var(--teal-var-1);
+    z-index: 10;
+  }
+
+  button.start:hover {
+    box-shadow: inset 0 0 8px 8px var(--blue-var-2-65), 0 1px 15px 4px var(--white);
+  }
+
+  button.start:active {
+    box-shadow: inset 0 0 8px 8px var(--blue-var-2-65), 0 1px 15px 4px var(--white);
+    color: var(--white);
+  }
+
+  .centered-text {
+    text-align: center;
+  }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  /* --- --- --- */
+  .portrait-content-zone {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 2fr 5fr 4fr 1fr;
+    column-gap: var(--gutter-size);
+    row-gap: var(--gutter-size);
+    padding-right: 160px;
+    padding-left: 160px;
+  }
+
+  .landscape-outer-content-zone {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 2fr 10fr 2fr;
+    column-gap: var(--gutter-size);
+    padding-right: 160px;
+    padding-left: 160px;
+  }
+
+  .landscape-inner-content-zone {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: auto auto;
+    row-gap: var(--gutter-size);
+    padding-right: 128px;
+    padding-left: 128px;
+  }
+
+  .img-content-area {
+    width: 100%;
+  }
+
+  .img {
+    background-color: var(--teal-var-main);
+    border-radius: 40px;
+    padding: var(--half-gutter-size);
+    box-shadow: 12px 24px 20px 0 var(--black-40), 4px 0 20px 12px var(--purple-var-main-50);
+  }
+
+  .landscape-txt-content-area {
+    width: 100%;
+  }
+
+  .portrait-txt-content-area {
+    width: 100%;
+  }
+}
+
+/*
+@media only screen and (max-width: 640px) {
+
+}
+
+@media only screen and (min-width: 641px) {
+
+}
+*/
